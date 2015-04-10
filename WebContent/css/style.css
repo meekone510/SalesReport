@@ -1,0 +1,104 @@
+.sapMBtn {
+	border-radius: 100px;
+	margin: 100px 50px 300px 300px;
+	vertical-align: top;
+	background-color: transparent;
+	border: none;
+}
+
+.sapMPage {
+	height: 100%;
+	position: relative;
+	background-color: #ffffff;
+}
+
+.sapMBtnContent {
+	display: block;
+	font-size: 1.35rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: top;
+	line-height: 2.5rem;
+}
+
+.showButtonCarousel {
+	display: none;
+}
+
+.showButtonArray {
+	display: block;
+}
+
+.showViz_M {
+	display: block;
+}
+
+.showFilterIcon {
+	display: none;
+}
+
+.showComboBox {
+	display: block;
+}
+
+.showVizList_D {
+	display: block;
+}
+
+.showVizList_M {
+	display: none;
+}
+
+.sapMBtnInner {
+	height: 200px;
+	min-width: 200px;
+	margin: 0;
+	padding: 30px;
+	vertical-align: top;
+	border: 1px solid #bfbfbf;
+	border-radius: 100px;
+	color: #333333;
+	text-shadow: 0 1px 0 #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.875rem;
+}
+
+.sapMBtn:focus>.sapMBtnInner.sapMFocusable {
+	outline: 1px dotted #005483;
+	outline-offset: -1px;
+	border: 5px solid #cfdcec;
+}
+
+.sapMText {
+	font-size: 2.875rem;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: normal;
+}
+
+@media ( max-width :415px) {
+	.showComboBox {
+		display: none;
+	}
+	.showFilterIcon {
+		display: inline-block;
+	}
+	.showVizList_D {
+		display: none;
+	}
+	.showVizList_M {
+		display: block;
+	}
+	.showButtonArray {
+		display: none;
+	}
+	.showButtonCarousel {
+		display: block;
+	}
+	.sapMBtn {
+		border-radius: 100px;
+		margin: 100px 50px 300px 73px;
+		vertical-align: top;
+		background-color: transparent;
+	}
+}

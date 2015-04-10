@@ -1,0 +1,104 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="salesreport.salesReport" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:layout="sap.ui.layout" xmlns:viz="sap.viz.ui5.controls" xmlns:ex="sap.salesReport.uilib">
+
+	<Page showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Image src="http://www.sap.com/global/images/SAPLogo.gif">
+					</Image>
+					<Text text="Net Sales"></Text>
+					<ToolbarSpacer />
+					<ComboBox items="{salesReport>/year}" class="showComboBox">
+						<core:Item key="{salesReport>year}" text="{salesReport>year}" />
+					</ComboBox>
+
+					<ComboBox items="{salesReport>/category}" class="showComboBox">
+						<core:Item key="{salesReport>category}" text="{salesReport>category}" />
+					</ComboBox>
+					<ComboBox items="{salesReport>/subcategory}" class="showComboBox">
+						<core:Item key="{salesReport>subcategory}" text="{salesReport>subcategory}" />
+					</ComboBox>
+					<core:Icon src="sap-icon://filter" color="#8875E7"
+						press="handleFilterPress" class="showFilterIcon">
+					</core:Icon>
+
+				</Toolbar>
+			</headerToolbar>
+			<content>
+				<layout:HorizontalLayout allowWrapping="true"
+					content="{salesReport>/countrySales}" width="100%" class="showButtonArray">
+					<Button text="{salesReport>name} {salesReport>country_data/net_sales}"
+						press="handleCountrySales">
+					</Button>
+				</layout:HorizontalLayout>
+					<Carousel pages="{salesReport>/countrySales}" class="showButtonCarousel">
+
+					<Button text="{salesReport>name} {salesReport>country_data/net_sales}"
+						press="handleCountrySales">
+					</Button>
+
+					</Carousel>
+			</content>
+		</Panel>
+
+		<layout:Splitter class="showVizList_D">
+			<viz:VizFrame id="vizColumn" width="100%" vizType="column">
+			</viz:VizFrame>
+
+			<Table id="varpayIndividualViewTable" inset="false"
+				showSeparators="None" items="{salesReport>/yearlyBestSeller}">
+				<headerToolbar>
+					<Toolbar>
+						<Label text="Best Seller Products"></Label>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="12em">
+						<Text text="Name"></Text>
+					</Column>
+					<Column width="12em">
+						<Text text="Units"></Text>
+					</Column>
+					<Column width="12em">
+						<Text text="Total"></Text>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{salesReport>name}" />
+							<Text text="{salesReport>units}" />
+							<Text text="{salesReport>total}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+				<layoutData>
+					<layout:SplitterLayoutData size="50%"
+						minSize="200px" />
+				</layoutData>
+			</Table>
+		</layout:Splitter>
+
+		<layout:VerticalLayout class="showVizList_M"
+			width="100%">
+			<viz:VizFrame id="vizColumn2" width="100%" vizType="column">
+			</viz:VizFrame>
+			<List items="{salesReport>/yearlyBestSeller}" headerText="Best Seller Products">
+				<items>
+					<ObjectListItem>
+						<attributes>
+							<ObjectAttribute text="{salesReport>name}" />
+							<ObjectAttribute text="{salesReport>units} {salesReport>total}" />
+
+						</attributes>
+					</ObjectListItem>
+				</items>
+
+			</List>
+		</layout:VerticalLayout>
+
+	</Page>
+
+</core:View>

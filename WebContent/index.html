@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		<meta name=”viewport” content=”width=device-width, initial-scale=1”>
+
+		<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m,sap.viz,sap.ui.commons"
+				data-sap-ui-theme="sap_bluecrystal"
+				data-sap-ui-xx-bindingSyntax="complex">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+		<script src="/sap.salesReport.uilib"></script>
+		<script>
+				sap.ui.localResources("salesreport");
+				var app = new sap.m.App({initialPage:"idsalesReport1"});
+				var page = sap.ui.view({id:"idsalesReport1", viewName:"salesreport.salesReport", type:sap.ui.core.mvc.ViewType.XML});
+				app.addPage(page);
+				app.placeAt("content");
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>
