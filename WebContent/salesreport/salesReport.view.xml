@@ -1,6 +1,6 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m" controllerName="salesreport.salesReport" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:layout="sap.ui.layout" xmlns:viz="sap.viz.ui5.controls" xmlns:ex="sap.salesReport.uilib">
+	xmlns:layout="sap.ui.layout" xmlns:viz="sap.viz.ui5.controls" xmlns:ex="salesreport">
 
 	<Page showHeader="false">
 		<Panel>
@@ -8,6 +8,7 @@
 				<Toolbar height="3rem">
 					<Image src="http://www.sap.com/global/images/SAPLogo.gif">
 					</Image>
+
 					<Text text="Net Sales"></Text>
 					<ToolbarSpacer />
 					<ComboBox items="{salesReport>/year}" class="showComboBox">
@@ -29,15 +30,13 @@
 			<content>
 				<layout:HorizontalLayout allowWrapping="true"
 					content="{salesReport>/countrySales}" width="100%" class="showButtonArray">
-					<Button text="{salesReport>name} {salesReport>country_data/net_sales}"
-						press="handleCountrySales">
-					</Button>
+
+					<ex:salesReportButton text="{salesReport>name}" AltText="{salesReport>country_data/net_sales}" press="handleCountrySales"/>
+
 				</layout:HorizontalLayout>
 					<Carousel pages="{salesReport>/countrySales}" class="showButtonCarousel">
 
-					<Button text="{salesReport>name} {salesReport>country_data/net_sales}"
-						press="handleCountrySales">
-					</Button>
+					<ex:salesReportButton text="{salesReport>name}" AltText="{salesReport>country_data/net_sales}" press="handleCountrySales"/>
 
 					</Carousel>
 			</content>
