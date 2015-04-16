@@ -7,6 +7,10 @@
 	height:auto;
 }
 
+.sapMPanelBG {
+  background-color: rgba(253, 253, 255, 0.8);
+}
+
 .sapMPage {
 	height: 100%;
 	position: relative;
