@@ -55,7 +55,7 @@ sap.ui.controller(
 									"net_sales" : "7M",
 									"yearly_distribution" : [ {
 										"quarter" : "Q1",
-										"sales" : "20M"
+										"sales" : "23M"
 									}, {
 										"quarter" : "Q2",
 										"sales" : "43M"
