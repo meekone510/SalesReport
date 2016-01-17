@@ -58,7 +58,7 @@ sap.ui.controller(
 										"sales" : "20M"
 									}, {
 										"quarter" : "Q2",
-										"sales" : "23M"
+										"sales" : "21M"
 									}, {
 										"quarter" : "Q3",
 										"sales" : "12M"
